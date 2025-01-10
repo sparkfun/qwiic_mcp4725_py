@@ -34,7 +34,7 @@
 # SOFTWARE.
 #===============================================================================
 
-"""
+"""!
 qwiic_mcp4725
 ============
 Python module for the [SparkFun I2C DAC Breakout Board (MCP4725)](https://www.sparkfun.com/products/12918)
@@ -72,15 +72,13 @@ class QwiicMCP4725(object):
     kPowerDownMode500K = 3    # PD1=1, PD0=1
 
     def __init__(self, address=None, i2c_driver=None):
-        """
+        """!
         Constructor
 
-        :param address: The I2C address to use for the device
+        @param int, optional address: The I2C address to use for the device
             If not provided, the default address is used
-        :type address: int, optional
-        :param i2c_driver: An existing i2c driver object
+        @param I2CDriver, optional i2c_driver: An existing i2c driver object
             If not provided, a driver object is created
-        :type i2c_driver: I2CDriver, optional
         """
 
         # Use address if provided, otherwise pick the default
@@ -99,11 +97,10 @@ class QwiicMCP4725(object):
             self._i2c = i2c_driver
 
     def is_connected(self):
-        """
+        """!
         Determines if this device is connected
 
-        :return: `True` if connected, otherwise `False`
-        :rtype: bool
+        @return **bool** `True` if connected, otherwise `False`
         """
         # Check if connected by seeing if an ACK is received
         # TODO: If the device has a product ID register, that should be
@@ -113,21 +110,19 @@ class QwiicMCP4725(object):
     connected = property(is_connected)
 
     def begin(self):
-        """
+        """!
         Initializes this device with default parameters
 
-        :return: Returns `True` if successful, otherwise `False`
-        :rtype: bool
+        @return **bool** Returns `True` if successful, otherwise `False`
         """
         # Confirm device is connected before doing anything
         return self.is_connected()
     
     def write_block_no_address(self, data):
-        """
+        """!
         Writes a block of data to the device without specifying an address
 
-        :param data: Bytes to write to the device
-        :type data: list
+        @param list data: Bytes to write to the device
         """
 
         # For devices that don't require an address to be sent before the data
@@ -135,14 +130,11 @@ class QwiicMCP4725(object):
 
 
     def write_fast_mode(self, value, powerDownMode = kPowerDownModeNormal):
-        """
+        """!
         Updates DAC register in fast mode
 
-        :param value: 12-bit value to write to DAC register
-        :type value: int
-
-        :param powerDownMode: Power down mode to write to DAC register
-        :type powerDownMode: int
+        @param int value: 12-bit value to write to DAC register
+        @param int powerDownMode: Power down mode to write to DAC register
 
         Allowable values for powerDownMode are:
             - `kPowerDownModeNormal`
@@ -168,14 +160,11 @@ class QwiicMCP4725(object):
         self.write_block_no_address(bytesToWrite)
 
     def write_dac(self, value, powerDownMode = kPowerDownModeNormal):
-        """
+        """!
         Updates DAC register
 
-        :param value: 12-bit value to write to DAC register
-        :type value: int
-
-        :param powerDownMode: Power down mode to write to DAC register
-        :type powerDownMode: int
+        @param int value: 12-bit value to write to DAC register
+        @param int powerDownMode: Power down mode to write to DAC register
 
         Allowable values for powerDownMode are:
             - `kPowerDownModeNormal`
@@ -205,14 +194,11 @@ class QwiicMCP4725(object):
 
 
     def write_dac_eeprom(self, value, powerDownMode = kPowerDownModeNormal):
-        """
+        """!
         Updates DAC register and EEPROM register
 
-        :param value: 12-bit value to write to DAC and EEPROM registers
-        :type value: int
-
-        :param powerDownMode: Power down mode to write to DAC and EEPROM registers
-        :type powerDownMode: int
+        @param int value: 12-bit value to write to DAC and EEPROM registers
+        @param int powerDownMode: Power down mode to write to DAC and EEPROM registers
 
         Allowable values for powerDownMode are:
             - `kPowerDownModeNormal`
@@ -241,11 +227,10 @@ class QwiicMCP4725(object):
         self.write_block_no_address(bytesToWrite)
 
     def read_dac_eeprom(self):
-        """
+        """!
         Reads the DAC and EEPROM registers
 
-        :return: A dictionary containing the DAC and EEPROM register values and flags
-        :rtype: dict
+        @return **dict** A dictionary containing the DAC and EEPROM register values and flags
 
         The dictionary contains the following keys:
             - `rdy_flag`: Ready flag
