@@ -7,7 +7,7 @@ NOTE: Any numbering of examples is to retain consistency with the Arduino librar
 This example writes the DAC with three example voltages: 0V, 1.65V, and 3.3V
 
 The key methods showcased by this example are: 
--[write_dac()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a655d2b07c51a48a94e0a8060c391e6f2)
+- [write_dac()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a655d2b07c51a48a94e0a8060c391e6f2)
 
 ## Qwiic Mcp4725 Ex2 Waveform
 This example takes data from a lookup table to provide 
@@ -17,13 +17,13 @@ This example takes data from a lookup table to provide
 This example writes the DAC and EEPROM With a single command.
 
 The key methods showcased by this example are: 
--[write_dac_eeprom()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#ae8986eedd9802dab5b8a7fc6f7e46aa7)
+- [write_dac_eeprom()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#ae8986eedd9802dab5b8a7fc6f7e46aa7)
 
 ## Qwiic Mcp4725 Ex4 Read
 This example writes the DAC and then reads the DAC value back from the device.
 
 The key methods showcased by this example are: 
--[read_dac_eeprom()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a281c8109bc1694b3a08d379bd1533bb7)
+- [read_dac_eeprom()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a281c8109bc1694b3a08d379bd1533bb7)
 
 ## Qwiic Mcp4725 Ex5 Power Down
 This example demonstrates how to enter and leave power down mode on the MCP4725 DAC.
@@ -32,4 +32,4 @@ This example demonstrates how to enter and leave power down mode on the MCP4725 
 This example uses fast mode to write the DAC with three example voltages: 0V, 1.65V, and 3.3V.
 
 The key methods showcased by this example are: 
--[write_fast_mode()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a6dbc56cd8dab60a6ad89ef195fab2e1c)
+- [write_fast_mode()](https://docs.sparkfun.com/qwiic_mcp4725_py/classqwiic__mcp4725_1_1_qwiic_m_c_p4725.html#a6dbc56cd8dab60a6ad89ef195fab2e1c)
