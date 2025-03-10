@@ -108,6 +108,9 @@ circup example qwiic_mcp4725\qwiic_mcp4725_ex5_power_down
 circup example qwiic_mcp4725\qwiic_mcp4725_ex6_fast_write
 
 ```
+> [!NOTE]
+> Example 2 requires a decent stack size in order to run (larger than the CircuitPython default). If you are interested in this example, in a file named "settings.toml" in the base directory on your CircuitPython board,
+> add the following line: ```CIRCUITPY_PYSTACK_SIZE=12288``` (increase this value as needed). If you don't perform this step you will likely get "pystack exhausted" errors when trying to run that example.
 
 Example Use
  ---------------
